@@ -20,12 +20,14 @@ $text-color: rgb(233, 233, 233);
 html {
   font-family: "Montserrat", "Open Sans", sans-serif;
   font-weight: 500;
-  // scroll-behavior: smooth;
+
+  scroll-behavior: smooth;
 }
 
 body {
   width: 100%;
   font-size: 16px;
+  color: #333;
 }
 .container {
   position: relative;
@@ -39,9 +41,9 @@ body {
   width: 80%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 767.98px) {
     width: 90%;
     flex-direction: column;
     gap: 50px;
@@ -59,7 +61,7 @@ body {
   align-items: center;
   margin-bottom: 120px;
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 767.98px) {
     margin-bottom: 150px;
   }
 }
@@ -67,7 +69,7 @@ body {
 .image-container {
   width: 30vw;
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 767.98px) {
     width: 50vw;
   }
 }
@@ -84,6 +86,8 @@ body {
   justify-content: center;
   gap: 5px;
   color: $text-color;
+  white-space: nowrap;
+  padding-right: 20px;
   span:last-child {
     font-size: 20px;
   }
@@ -102,8 +106,12 @@ body {
     align-items: center;
     justify-content: space-around;
     padding-top: 50px;
+    .menu {
+      display: none;
+      cursor: pointer;
+    }
 
-    ul {
+    .nav-bar {
       list-style: none;
       display: flex;
       justify-content: center;
@@ -120,36 +128,55 @@ body {
         letter-spacing: 0.5px;
       }
     }
-    ul > li:last-child {
+    ul > li:last-child a {
       border: solid $text-color 1px;
       padding: 10px 6px;
       border-radius: 5px;
+
+      &:hover {
+        background: $text-color;
+        color: $primary-color !important;
+      }
     }
   }
-  @media (max-width: 575.98px) {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%, 0 62%);
+  @media (max-width: 767.98px) {
+    clip-path: none;
+    height: 150%;
 
-    ul {
-      position: absolute;
-      z-index: 1000;
-      flex-direction: column;
-      background: $primary-color;
-      top: 0;
-      right: 0;
-      width: 0;
-
-      li {
+    nav {
+      justify-content: space-between;
+      padding: 20px;
+      .menu {
         display: block;
-        a {
-          display: block;
-          width: 100%;
-          padding: 10px 20px;
+      }
+      .nav-bar {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 10%;
+        right: 0;
+        z-index: 1000;
+        flex-direction: column;
+        background: $text-color;
+        transition: all 0.4s ease-in;
 
-          &:hover {
-            background: $text-color;
-            color: $primary-color;
+        li {
+          display: block;
+          a {
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            color: #333 !important;
+
+            &:hover {
+              color: $text-color !important;
+              background: $primary-color;
+            }
           }
         }
+      }
+      ul.close {
+        display: block;
       }
     }
   }
@@ -165,17 +192,19 @@ body {
   .jumbotron {
     color: $text-color;
     padding: 20px;
-    width: 45%;
+    // width: 50%;
 
     h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
+      text-align: center;
     }
     p {
       margin-bottom: 50px;
       text-align: left;
     }
     a {
+      white-space: nowrap;
       text-decoration: none;
       color: $text-color;
       background: $accent-color;
@@ -186,9 +215,8 @@ body {
       }
     }
   }
-  @media (max-width: 575.98px) {
-    top: 20%;
-
+  @media screen and(max-width: 767.98px) {
+    text-align: center;
     .content {
       flex-direction: column-reverse;
     }
@@ -197,6 +225,7 @@ body {
       text-align: center;
       h1 {
         font-size: 2em;
+        text-align: center !important;
       }
 
       p {
@@ -204,16 +233,26 @@ body {
       }
     }
   }
+  @media (max-width: 991.98px) {
+    .jumbotron {
+      width: 55%;
+      padding: 15px;
+
+      h1 {
+        font-size: 2.8em;
+      }
+    }
+  }
 }
 //card container
 .card-container {
-  margin-top: 150px;
+  padding-top: 150px;
   .content {
     gap: 50px;
   }
   .card {
     padding: 50px;
-    box-shadow: 17px -2px 82px 17px rgba(0, 0, 0, 0.15);
+    box-shadow: 17px -2px 82px 3px rgba(0, 0, 0, 0.1);
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
@@ -238,6 +277,21 @@ body {
     .card-text {
       font-size: 14px;
       padding: 10px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    padding-top: 400px;
+  }
+
+  @media (max-width: 991.98px) {
+    margin-top: 50px;
+
+    .content {
+      gap: 40px;
+      .card {
+        padding: 10px;
+      }
     }
   }
 }
@@ -314,7 +368,7 @@ body {
     box-shadow: 17px -2px 82px 17px rgba(0, 0, 0, 0.15);
   }
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 767.98px) {
     .content {
       flex-direction: column-reverse;
     }
@@ -359,6 +413,18 @@ footer {
   align-items: center;
   padding-top: 20px;
 
+  .scroll-to-top {
+    position: fixed;
+    bottom: 40%;
+    right: 2%;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(45deg, $primary-color, $secondary-color);
+    border-radius: 50%;
+    box-shadow: 17px -2px 82px 17px rgba(0, 0, 0, 0.15);
+  }
   .content {
     padding: 50px 0px;
     width: 80%;
@@ -381,7 +447,6 @@ footer {
     }
 
     .google-container {
-      width: 20%;
       display: flex;
       align-items: center;
       justify-content: space-around;
@@ -430,7 +495,6 @@ footer {
     }
 
     .details-container {
-      width: 80%;
       display: flex;
       gap: 30px;
       justify-content: space-between;
@@ -467,6 +531,10 @@ footer {
           padding-bottom: 10px;
         }
       }
+
+      @media (max-width: 991.98px) {
+        width: 100%;
+      }
     }
   }
 
@@ -479,18 +547,27 @@ footer {
     clip-path: ellipse(70% 100% at 50% 100%);
   }
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 767.98px) {
     margin: 0;
+
+    .google-container {
+    }
     .details-container {
       flex-direction: column;
     }
     .footer-details-2-container {
+      flex-direction: column;
       .footer-details-2 {
         padding-bottom: 20px;
         li {
           text-align: center;
         }
       }
+    }
+
+    .footer-svg-container {
+      height: 74%;
+      clip-path: none;
     }
   }
 }

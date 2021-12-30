@@ -17,17 +17,28 @@
       <div class="top-container">
         <div class="top-svg-container">
           <!--nav bar-->
-          <nav>
+          <nav id="home">
             <a class="logo" href="#">
               <span><img src="./assets/images/logo.svg" width="40" /></span>
               <span>Optima Ninja</span>
             </a>
-            <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Porfolio</a></li>
-              <li><a href="#">Ninja Care</a></li>
-              <li><a href="#">Get Free Proposal</a></li>
+            <img src="./assets/images/menu.svg" width="25" class="menu" />
+            <ul class="nav-bar">
+              <li class="nav-item">
+                <a href="#services" class="nav-item-link">Services</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-item-link">Team</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-item-link">Porfolio</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-item-link">Ninja Care</a>
+              </li>
+              <li class="nav-item">
+                <a href="#guide" class="nav-item-link">Get Free Proposal</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -240,7 +251,7 @@
             <!--end google container-->
 
             <!--guide container-->
-            <div class="guide-container">
+            <div class="guide-container" id="guide">
               <p>Want a FREE Guide for Web Design</p>
               <a href="#home">Download</a>
             </div>
@@ -313,6 +324,9 @@
 
           <div class="footer-svg-container"></div>
         </div>
+        <a href="#home" class="scroll-to-top">
+          <img src="./assets/images/arrow-up.svg" width="30" />
+        </a>
       </footer>
     </div>
 
