@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  width: 100% !important;
+  width: 100%;
   font-size: 16px;
 }
 
@@ -576,6 +576,18 @@ footer .footer-container .details-container {
 
 footer .footer-container .details-container .footer-details-1 {
   margin-right: 30px;
+}
+
+footer .footer-container .details-container .footer-details-2-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 20px;
 }
 
 footer .footer-container .details-container .footer-details-2 {
