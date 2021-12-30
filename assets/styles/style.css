@@ -334,6 +334,7 @@ body {
           box-shadow: 17px -2px 82px 3px rgba(0, 0, 0, 0.1);
   text-align: center;
   border-radius: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 
@@ -517,8 +518,8 @@ footer .scroll-to-top {
   position: fixed;
   bottom: 40%;
   right: 2%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -731,5 +732,9 @@ footer .footer-svg-container {
     -webkit-clip-path: none;
             clip-path: none;
   }
+}
+
+.designer {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
